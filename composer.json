@@ -1,4 +1,7 @@
 {
+	"name": "thisismyengine/egnyte",
+	"description": "Manage Egnyte uploads with the Egnyte public API",
+	"type": "package",
 	"autoload": {
 		"psr-4": {
 			"Egnyte\\": "src/Egnyte/"
