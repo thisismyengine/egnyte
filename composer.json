@@ -1,0 +1,10 @@
+{
+	"autoload": {
+		"psr-4": {
+			"Egnyte\\": "src/Egnyte/"
+		}
+	},
+	"require": {
+		"php-curl-class/php-curl-class": "^7.0"
+	}
+}
