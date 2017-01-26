@@ -88,10 +88,10 @@ class File
     }
 
     /**
-     * Download file / directory from Egnyte.
+     * Download file from Egnyte.
      * 
-     * @param  string $path   Remote file / directory path
-     * @param  string $output Local output directory
+     * @param  string $path   Remote file path
+     * @param  string $output Local output directory and file name
      * @return bool
      */
     public function download($path, $output)
