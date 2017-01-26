@@ -88,6 +88,23 @@ class File
     }
 
     /**
+     * Download file / directory from Egnyte.
+     * 
+     * @param  string $path   Remote file / directory path
+     * @param  string $output Local output directory
+     * @return bool
+     */
+    public function download($path, $output)
+    {
+        // path names are passed in the URL, so they need encoding
+        $path = Request::path_encode($path);
+
+        $response = $this->request->get('/fs-content'.$path);
+
+        return file_put_contents($output, $response->body);
+    }
+
+    /**
      * Create a new directory.
      *
      * @param string $parent_directory Parent directory
