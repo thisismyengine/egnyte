@@ -24,9 +24,15 @@ class File
      *
      * @return Egnyte\Httpd\Response Response object
      */
-    public function metadata($path)
+    public function metadata($path, $params = [])
     {
-        return $this->request->get('/fs'.Request::path_encode($path));
+        $path = Request::path_encode($path);
+        
+        if (!empty($params)) {
+            $path .= '?' . http_build_query($params);
+        }
+
+        return $this->request->get('/fs'.$path);
     }
 
     /**
