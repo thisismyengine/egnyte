@@ -62,7 +62,7 @@ class Response
     public function get_error()
     {
         if ($this->status_code < 400) {
-            return new Exception('Request was successful, there are no error details');
+            return new \Exception('Request was successful, there are no error details');
         }
 
         $fields = [
