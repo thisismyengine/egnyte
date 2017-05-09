@@ -112,10 +112,10 @@ class File
      *
      * @return Egnyte\Httpd\Response Response object
      */
-    public function create_directory($parent_directory, $directory_name)
+    public function create_directory($path)
     {
         // path names are passed in the URL, so they need encoding
-        $path = Request::path_encode($parent_directory.'/'.$directory_name);
+        $path = Request::path_encode($path);
 
         return $this->request->post_json('/fs'.$path, ['action' => 'add_folder'], [
             403 => 'User does not have permission to create directory',
